@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>List of Songs</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row ">
+            <% jsonData.forEach(element => { %>
+            <div class="col s12 m4 m7">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="<%= element['artworkUrl100'] %> ">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Artist : <%= element['artistName'] %> </p>
+                            <p>Song : <%= element['trackName'] %> </p>
+                            <p>Album : <%= element['collectionName'] %> </p>
+                        </div>
+                        <div class="card-action">
+                            <a href="<%= element['trackViewUrl'] %> ">Link of song</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%   }); %>
+        </div>
+    </div>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
+</html>
